@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PRACTICE PAGE</title>
+    <link rel="stylesheet" media="screen" href="global.css" type="text/css" >
+    <!--simple hello world in html 4.01 strict example-->
+</head>
+<body>
+    <h1>WELcome to the world of HTml</h1> <hr>
+    <p>deepika<em> is actually a optimistic girl</em> but a bit stubborn</p>
+    <p>but hope to see it again </p>
+    <h2>hello im nmitian</h2><p>you can also join cse in my clg</p>
+    <h3>not a force but ok</h3><br>
+    <base href="http://htmlref.com/basexeample" >
+    <link rel="stylesheet" media="screen" href="global.css" type="text/css" >
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"  
+    width="0" height="0" id="HiddenFlash" > 
+<param name="movie" value="flashlib.swf" /> 
+</object>
+<script type="text/javascript"> 
+    alert("Hi from JavaScript!"); 
+    /* more code below */ 
+   </script>
+    <script type="text/javascript" href="ajaxtcr.js"></script>
+    <!--html is not case sensitive-->
+    <b>GO BOLD BABY</b><br>
+    <!--attributes are case sensitive-->
+    <!--html is sensitive to whitespace character-->
+    <strong>Test for space</strong>
+    <!--follows content model-->
+    <ul><p>simple way to make content</p></ul>
+    <!--elements should nest-->
+    <b><i>is not since tags nest</i></b>
+    <!--attributes should be quoted-->
+    <img src="robot.gif" height="10" width="10" alt="robot" />
+    <p>lets try something new<danger> come on </danger>lets do</p>
+    <div class="header"></div>
+    <div class="section">
+        <div class="header">
+             <h2>section heading</h2>
+             <p>content of section</p>
+        </div>
+    </div>
+    <nav> 
+        <h2>Offsite Links</h2> 
+       <a href="http://www.w3c.org">W3C</a><br> 
+       <a href="http://www.htmlref.com">Book site</a><br> 
+       <a href="http://www.pint.com">Author's Firm</a><br> 
+       </nav>
+       <nav id="mainNav"> 
+       
+        <ul> 
+          <li><a href="about.html">About</a></li> 
+          <li><a href="services.html">Services</a></li> 
+          <li><a href="contact.html">Contact</a></li> 
+          <li><a href="index.html">Home</a></li>
+          <video src="http://htmlref.com/ch2/html_5.mp4"   
+       width="640" height="360" controls> 
+<strong>HTML5 video element not supported</strong> 
+        </video>
+        </ul> 
+        </nav>
+        <audio> 
+            <bgsound src="http://htmlref.com/ch2/music.wav"> 
+           </audio>
+           <audio controls autobuffer autoplay> 
+            <source src="http://htmlref.com/ch2/music.ogg" type="audio/ogg"> 
+            <source src="http://htmlref.com/ch2/music.wav" type="audio/wav"> 
+           </audio>
+           <video width="640"  height="360" controls poster="loading.png"> 
+            <source src="http://htmlref.com/ch2/html_5.mp4" type="video/mp4"> 
+            <source src="http://htmlref.com/ch2/html_5.ogv" type="video/ogg"> 
+           <object data="html_5.swf" type="application/x-shockwave-flash" 
+                   width="640" height="360" id="player"> 
+             <param name="movie" value="html_5.swf"/> 
+             <strong>Error: No video support at all</strong> 
+           </object> 
+           </video>
+           <canvas id="canvas" width="300" height="300"> 
+            <strong>Canvas Supporting Browser Required</strong> 
+          </canvas>
+          <p><label>color:<input type="color" name="favColor"></label></p>
+          <p><label>date: 
+            <input type="date" name="date"> 
+          </label></p> 
+          <p><label>datetime: 
+          <input type="datetime" name="datetime"> 
+          </label></p> 
+          <p><label>datetime-local: 
+          <input type="datetime-local" name="datetime2"> 
+          </label></p> 
+          <p><label>time: 
+            <input type="time" name="time"> 
+          </label></p> 
+          <p><label>month: 
+            <input type="month" name="month"> 
+          </label></p> 
+          <p><label>week: 
+            <input type="week" name="week"> 
+          </label></p>
+          <p><label>number:<input type="number" name="number"></label></p>
+          <input type="number" name="number2" min="-5" max="25" step="5">
+          <input type="range" name="range" max="100" min="1" step="5">
+          <p><label>range (1-100 step 5): 
+            <input type="range" name="range" max="100" min="1" step="5"> 
+            </label></p> 
+            <p><label>range (-1000-1000 step 100): 
+            <input type="range" name="range" max="1000" min="-1000" step="100"> 
+            </label></p>
+            <!--details for filling-->
+            <p><label>tel num:<input type="tel" name="telno"></label></p>
+            <p><label>Email: <input type="email" name="email"></label></p> 
+            <p><label>URL: <input type="url" name="url"></label></p>
+            <!--validations-->
+            <label for="phonenum" class="required">Phone Number:</label> 
+            <input type="text" name="phonenum" id="phonenum" required  
+                 pattern="^\(\d{3}\) \d{3}-\d{4}$"  
+                 title="Phone number of form (xxx) xxx-xxxx required">
+                 <label for="email" class="required">E-mail:</label> 
+<input type="text" name="email" id="email" required  
+       pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.(\w{2}|(com|net|org|edu|i
+ nt|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$" title="E-mail format 
+required">
+<!--lists-->
+<p><label>Favorite Dog: <input type="text" list="dogs"></label></p> 
+<datalist id="dogs"> 
+    <option>Angus</option> 
+    <option>Tucker</option> 
+    <option>Cisco</option> 
+    <option>Sabrina</option> 
+</datalist>
+<!--miscelleneous-->
+<input type="text" name="firstname" id="firstname" value="Thomas">
+<input type="text" name="middlename" id="middlename"  
+value="Enter your middle name here">
+<input type="text" name="firstname" id="firstname"  
+placeholder="Enter your name here">
+<label>Search:<input type="search" name="query"  
+    id="searchBox" autofocus></label>
+    <input type="text" name="firstname" id="firstname"  
+    placeholder="Enter your name here" autocomplete>
+    <!--menu-->
+    <menu type="list" id="oldStyle"> 
+        <li>Item 1</li> 
+        <li>Item 2</li>
+        <li>Item 3</li> 
+        <li>Item 4</li> 
+    </menu>
+    <menu type="toolbar" id="fileMenu" label="File"> 
+        <li><a href="javascript:newItem();">New</a></li> 
+        <li><a href="javascript:openItem();">Open</a></li> 
+        <li><a href="javascript:closeItem();">Close</a></li> 
+        <hr> 
+        <li><a href="javascript:saveItem();">Save</a></li> 
+        <li><a href="javascript:saveAsItem();">Save as...</a></li> 
+        <hr> 
+        <li><a href="javascript:exitApp();">Exit</a></li> 
+      </menu>
+      <div contextmenu="simpleMenu">Widget</div>
+      <!--command element-->
+      <menu type="command" label="Main Menu"> 
+        <command type="command" label="Add" icon="add.png"> 
+        <command type="command" label="Edit" icon="edit.png"> 
+        <command type="command" label="Delete" icon="delete.png"> 
+        <hr> 
+        <menu type="command" label="Skin" id="skinMenu"> 
+           <command type="radio" radiogroup="skin" label="Classic"> 
+           <command type="radio" radiogroup="skin" label="Modern" checked> 
+           <command type="radio" radiogroup="skin" label="Neo"> 
+        </menu> 
+        <hr> 
+        <command type="checkbox" label="Secure Mode"> 
+      </menu>
+      <!--measure-->
+      <p>Warp Drive Output: <meter min="0" max="10" low="3" optimum="7" high="9" 
+        value="9.5" title="Captain she can't take much more of this!"></meter></p>
+        <p>Progress: <progress id="progressBar" max="100.00" value="33.1"> 
+            33.1%</progress></p>
+            <!--details-->
+            <details onclick="this.open='open'"> 
+                <dt>Help?</dt> 
+                <dd>This could give you help with HTML5 but we need more  
+                   implementations to prove how things will work.</dd> 
+               </details>
+               <!--form output element-->
+               <form action="#" method="get" id="testform"> 
+                <p><input type="date" id="year"> 
+                <p>HTML5 released in the year 
+                <output for="year">&nbsp;</output></p> 
+                </form>
+</body>
+</html>
