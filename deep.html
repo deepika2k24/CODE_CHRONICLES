@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>This goes in the tab of your browser</title>
+</head>
+<body>
+    <input type="text" x-webkit-speech>
+The content of the webpage
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Input Demo</title>
+</head>
+<button id="recordBtn">🎤 Start Recording</button>
+<audio id="audioPlayback" controls></audio>
+
+<script>
+let mediaRecorder;
+let audioChunks = [];
+
+document.getElementById("recordBtn").onclick = async () => {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  mediaRecorder = new MediaRecorder(stream);
+
+  mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+  mediaRecorder.onstop = async () => {
+    const blob = new Blob(audioChunks, { type: "audio/webm" });
+    audioChunks = [];
+
+    // send to backend
+    const formData = new FormData();
+    formData.append("file", blob, "voice.webm");
+
+    const response = await fetch("/upload", { method: "POST", body: formData });
+    const text = await response.text();
+    document.getElementById("audioPlayback").src = URL.createObjectURL(blob);
+    alert("Transcribed Text: " + text);
+  };
+
+  mediaRecorder.start();
+  setTimeout(() => mediaRecorder.stop(), 5000); // record 5s then stop
+};
+</script>
+
+<body>
+    <button id="recordBtn">🎤 Start Recording</button>
+<audio id="audioPlayback" controls></audio>
+
+<script>
+let mediaRecorder;
+let audioChunks = [];
+
+document.getElementById("recordBtn").onclick = async () => {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  mediaRecorder = new MediaRecorder(stream);
+
+  mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+  mediaRecorder.onstop = async () => {
+    const blob = new Blob(audioChunks, { type: "audio/webm" });
+    audioChunks = [];
+
+    // send to backend
+    const formData = new FormData();
+    formData.append("file", blob, "voice.webm");
+
+    const response = await fetch("/upload", { method: "POST", body: formData });
+    const text = await response.text();
+    document.getElementById("audioPlayback").src = URL.createObjectURL(blob);
+    alert("Transcribed Text: " + text);
+  };
+
+  mediaRecorder.start();
+  setTimeout(() => mediaRecorder.stop(), 5000); // record 5s then stop
+};
+</script>
+
+  <h2>🎤 Speak Something</h2>
+  <button id="startBtn">Start Listening</button>
+  <p id="output"></p>
+
+  <script>
+    const startBtn = document.getElementById("startBtn");
+    const output = document.getElementById("output");
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      output.textContent = "Speech Recognition not supported in this browser.";
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.lang = "en-US";
+      recognition.interimResults = false;
+
+      startBtn.onclick = () => {
+        recognition.start();
+        output.textContent = "Listening...";
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        output.textContent = "You said: " + transcript;
+      };
+
+      recognition.onerror = (event) => {
+        output.textContent = "Error: " + event.error;
+      };
+    }
+    
+  </script>
+</body>
+</html>
+
+ <script>
+ console.log("Hi there!");
+ </script>
+</body>
+</html>
